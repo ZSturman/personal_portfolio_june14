@@ -87,6 +87,7 @@ body{
     h2{
         font-size: 7rem;
         color: var(--text-primary);
+        font-weight: 200;
        
     }
     h3{
@@ -237,6 +238,112 @@ body{
     grid-template-columns: minmax(12px, auto) minmax(900px, 1440px) minmax(12px, auto);
     grid-template-rows: minmax(30px, 10vh) 100vh 100vh 100vh min(95vh) minmax(30px, 5vh);
 }
+
+.projects-page-grid-container{
+    display: grid;
+    justify-content: stretch;
+    align-content: center;
+    
+    grid-template-columns: minmax(12px, auto) minmax(900px, 1440px) minmax(12px, auto);
+    grid-template-rows: minmax(30px, 10vh) minmax(85vh, auto) minmax(30px, 5vh);
+
+    .marginl{
+        grid-column: 1/2;
+        grid-row: 1/-2;
+        /* background-color: rgba(0, 0, 255, 0.284); */
+    }
+    .marginr{
+        grid-column: -2/ -1;
+        grid-row: 1/-2;
+        /* background-color: rgba(255, 255, 0, 0.234); */
+    }
+    .nav{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        /* background-color: rgba(0, 255, 68, 0.234); */
+
+        .scroll-icon{
+            padding-top: 1.5rem;
+        }
+    
+        .nav-social-links-flex-container{
+            display: none;
+        }
+    }
+    
+    .social-links-flex-container,
+    .send-button-and-social-media{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .projects-page{
+        grid-row: 2/3;
+        margin-bottom: 3rem;
+
+        .project-page-items{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 2rem;
+            justify-content: space-around;
+            justify-content: start;
+            padding-top: 2rem;
+
+            .greenhorn-project{
+                .img{
+                    background-image: url(/css/images/greenhorn/greenhorn_poster.PNG);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        filter: saturate(50%);
+
+                }
+            }
+
+            .project-flex-container{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                background-image: linear-gradient(to bottom left, rgba(0, 238, 255, 0.122), rgba(36, 42, 85, 0));
+                padding: 1rem;
+                border-radius: 1.5rem;
+
+                .software-and-skills{
+                    h6{
+                        font-weight: 100;
+                    }
+                }
+
+
+                .project-flex-container-content-btns-img{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+    
+                    .img{
+                        width: 200px;
+                        height: 300px;
+                        border-radius: 1.5rem;
+                        min-width: 200px;
+                    }
+    
+                    .project-content{
+                        max-width: 30ch;
+    
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
 
 .marginl{
     grid-column: 1/2;
@@ -467,6 +574,90 @@ body{
 }
 
 @media screen and (max-width: 350px) {
+
+    .projects-page-grid-container{
+        grid-template-areas: 
+        "nav"
+        "projects"
+        "footer";
+
+        display: grid;
+        justify-content: start;
+
+        .marginl{
+            display: none;
+        }
+        .marginr{
+            display: none;
+        }
+    
+        .nav{
+            grid-area: nav;
+            width: 100vw;
+            height: auto;
+            position: fixed;
+            z-index: 999;
+            background-color: var(--btn-one-light-mode);
+
+            .scroll-icon{
+                display: none;
+            }
+    
+            .nav-social-links-flex-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem;
+    
+                a{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .projects-page{
+            grid-area: projects;
+
+            .page-heading{
+                padding: 1rem;
+            }
+
+            .project-page-items{
+                grid-template-columns: auto;
+                justify-content: start;
+                padding-left: 5vw;
+
+                .project-flex-container{
+                    width: 90vw;
+                    background-image: linear-gradient(to bottom, rgba(0, 238, 255, 0),rgba(62, 14, 110, 0.1), rgb(21, 53, 61));
+                    .project-flex-container-content-btns-img{
+                        flex-direction: column;
+
+                        .project-content{
+                            width:max-content;
+
+                            .content{
+                                padding-bottom: 1rem;
+                            }
+                        }
+
+                        .buttons-flex-container{
+                            flex-direction: row;
+                        }
+                    }
+                    
+                    }
+
+                .project-template,
+                .project-template2{
+                    width: 80vw;
+                    height: 30vh;
+                }
+            }
+        }
+    
+    }
+
 
     :root{
         h1{
@@ -710,6 +901,93 @@ body{
 }
 
 @media screen and (max-width: 480px) and (min-width: 351px){
+    .projects-page-grid-container{
+        grid-template-areas: 
+        "nav"
+        "projects"
+        "footer";
+
+        display: grid;
+        justify-content: start;
+
+        .marginl{
+            display: none;
+        }
+        .marginr{
+            display: none;
+        }
+    
+        .nav{
+            grid-area: nav;
+            width: 100vw;
+            height: auto;
+            position: fixed;
+            z-index: 999;
+            background-color: var(--btn-one-light-mode);
+
+            .scroll-icon{
+                display: none;
+            }
+    
+            .nav-social-links-flex-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem;
+    
+                a{
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .projects-page{
+            grid-area: projects;
+
+            .page-heading{
+                padding: 1rem;
+            }
+
+            .project-page-items{
+                grid-template-columns: auto;
+                justify-content: start;
+                padding-left: 5vw;
+
+                .project-flex-container{
+                    width: 90vw;
+                    background-image: linear-gradient(to bottom, rgba(0, 238, 255, 0),rgba(62, 14, 110, 0.1), rgb(21, 53, 61));
+                    .project-flex-container-content-btns-img{
+                        flex-direction: column;
+
+                        .project-content{
+                            width:max-content;
+
+                            .content{
+                                padding-bottom: 1rem;
+                            }
+                        }
+
+                        .buttons-flex-container{
+                            flex-direction: row;
+                        }
+                    }
+                    
+                    }
+
+                .project-template,
+                .project-template2{
+                    width: 80vw;
+                    height: 30vh;
+                }
+            }
+        }
+    
+    }
+
+
+
+
+    
 
     :root{
         h1{
@@ -936,6 +1214,24 @@ body{
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px){
+    .projects-page-grid-container{
+        grid-template-columns: minmax(12px, auto) minmax(200px, 1440px) minmax(12px, auto);
+        .projects-page{
+            .project-page-items{
+                grid-template-columns: auto;
+                justify-content: space-evenly;
+                column-gap: 0;
+                row-gap: 1rem;
+                .project-flex-container{
+                    .project-flex-container-content-btns-img{
+                        flex-direction: row;
+                    }
+                    
+                    }
+                }
+            }
+        }
+
 
     :root{
         h1{
@@ -1091,7 +1387,26 @@ body{
     
 }
 
+
 @media screen and (max-width: 1024px) and (min-width: 769px){
+    .projects-page-grid-container{
+        grid-template-columns: minmax(12px, auto) minmax(500px, 1440px) minmax(12px, auto);
+        .projects-page{
+            .project-page-items{
+                grid-template-columns: auto auto;
+                justify-content: space-evenly;
+                column-gap: 0;
+                row-gap: 1rem;
+                .project-flex-container{
+                    .project-flex-container-content-btns-img{
+                        flex-direction: column;
+                    }
+                    
+                    }
+                }
+            }
+        }
+    
     :root{
         h1{
             font-size: 10rem;
@@ -1196,14 +1511,43 @@ body{
 
 }
 
-@media screen and (min-width: 1025px){
-    .portfolio-container{
-        grid-template-columns: minmax(12px, auto) minmax(900px, 1640px) minmax(12px, auto);
+@media screen and (max-width: 1250px) and (min-width: 1025px){
+    .projects-page-grid-container{
+        .projects-page{
+            .project-page-items{
+                justify-content: space-evenly;
+                .project-flex-container{
+                    .project-flex-container-content-btns-img{
+                        flex-direction: column;
+                    }
+                    
+                    }
+                }
+            }
+        }
+        .portfolio-container{
+            grid-template-columns: minmax(12px, auto) minmax(900px, 1640px) minmax(12px, auto);
+        }
+        .home{
+            height: 100vh;
+        }
     }
-    .home{
-        height: 100vh;
+
+   
+    
+
+
+@media screen and (min-width: 1251px){
+    .projects-page-grid-container{
+        .projects-page{
+            .project-page-items{
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+        }
+    }
+
     }
     
-}
 
 
