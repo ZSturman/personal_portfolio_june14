@@ -389,6 +389,7 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+  opacity: .7;
 }
 
 .projects .cards-flex-container .card-flex-container .medium {
@@ -415,22 +416,17 @@ body {
   z-index: 10;
 }
 
+.projects .cards-flex-container .card-flex-container .card-btn-1, .projects .cards-flex-container .card-flex-container .card-btn-2 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  white-space: nowrap;
+}
+
 .projects .cards-flex-container .card-flex-container .buttons-flex-container {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.projects .cards-flex-container .card-flex-container .card {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(69, 112, 120, 0.9)), color-stop(rgba(61, 100, 107, 0)), color-stop(rgba(61, 100, 107, 0)), to(#1e3134));
-  background-image: linear-gradient(to bottom, rgba(69, 112, 120, 0.9), rgba(61, 100, 107, 0), rgba(61, 100, 107, 0), #1e3134);
-  -webkit-box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481);
-          box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481);
-}
-
-.projects .cards-flex-container .card-flex-container .card:hover {
-  -webkit-box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481), 0 0 50px #006c80;
-          box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481), 0 0 50px #006c80;
 }
 
 .projects .cards-flex-container .card {
@@ -438,8 +434,7 @@ body {
   background-image: linear-gradient(to bottom, rgba(37, 61, 65, 0.9), rgba(61, 100, 107, 0), rgba(61, 100, 107, 0), rgba(37, 61, 65, 0.9));
   -webkit-box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481);
           box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481);
-  -webkit-transition: all 3ms ease-in-out;
-  transition: all 3ms ease-in-out;
+  max-width: 50ch;
 }
 
 .projects .cards-flex-container .card:hover {
@@ -449,11 +444,18 @@ body {
           box-shadow: 8px 10px 10px 3px rgba(0, 0, 0, 0.481), 0 0 50px #006c80;
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
+  cursor: pointer;
 }
 
 .projects .cards-flex-container .card:hover .project-title {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  opacity: 1;
+}
+
+.projects .cards-flex-container .card:hover a {
+  -webkit-transform: none;
+          transform: none;
 }
 
 .projects .not-satisfied {

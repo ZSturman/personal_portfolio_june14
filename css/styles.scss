@@ -318,6 +318,7 @@ body{
             .project-title{
                 padding-top: 3rem;
                 width: min-content;
+                opacity: .7;
             }
             .medium{
                 color: white;
@@ -338,35 +339,37 @@ body{
                 z-index: 10;
             }
 
+            .card-btn-1, .card-btn-2{
+                width: min-content;
+                white-space: nowrap;
+            }
+
             .buttons-flex-container{
                 align-self: center;
             }
 
-            .card{
-                background-image: linear-gradient(to bottom, hsla(189, 27%, 37%, 0.9),hsla(189, 27%, 33%, 0),hsla(189, 27%, 33%, 0),hsl(189, 27%, 16%));
-                box-shadow: 8px 10px 10px 3px hsla(0, 0%, 0%, 0.481);
-            }
-            
-            .card:hover{
-                box-shadow: 8px 10px 10px 3px hsla(0, 0%, 0%, 0.481), 0 0 50px hsla(189, 100%, 25%, 15%);
-
-            }
         }
         .card{
             background-image: linear-gradient(to bottom, hsla(188, 28%, 20%, 0.9),hsla(189, 27%, 33%, 0),hsla(189, 27%, 33%, 0),hsla(188, 28%, 20%, 0.9));
             box-shadow: 8px 10px 10px 3px hsla(0, 0%, 0%, 0.481);
-            transition: all 3ms ease-in-out;
+            max-width: 50ch;
         }
         .card:hover{
             background-image: linear-gradient(to bottom, hsla(189, 27%, 37%, 0.9),hsla(189, 27%, 33%, 0),hsla(189, 27%, 33%, 0),hsl(189, 27%, 16%));
             box-shadow: 8px 10px 10px 3px hsla(0, 0%, 0%, 0.481), 0 0 50px hsla(189, 100%, 25%, 15%);
             transform: scale(1.01);
+            cursor: pointer;
 
             .project-title{
                 transform: scale(1.1);
+                opacity: 1;
+            }
+            a{
+                transform: none;
             }
 
         }
+       
     }
 
     .not-satisfied{
@@ -463,7 +466,7 @@ body{
     }
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 350px) {
 
     :root{
         h1{
@@ -1161,15 +1164,9 @@ body{
             padding: .5rem;
         }
     }
-
-
-
     .portfolio-container{
         grid-template-columns: minmax(12px, auto) minmax(645px, 900px) minmax(12px, auto);
     }
-
-   
-
     .home{
         .scroll-icon{
             margin-top: 2rem;
