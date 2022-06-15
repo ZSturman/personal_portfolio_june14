@@ -19,6 +19,7 @@ body {
   transition: all 200ms ease-in-out;
   /* background-color: var(--bg-color-dark-mode); */
   background-color: #1a1a1a;
+  overflow-wrap: normal;
 }
 
 :root {
@@ -262,8 +263,8 @@ body {
       align-content: center;
   -ms-grid-columns: minmax(12px, auto) minmax(900px, 1440px) minmax(12px, auto);
       grid-template-columns: minmax(12px, auto) minmax(900px, 1440px) minmax(12px, auto);
-  -ms-grid-rows: minmax(30px, 10vh) 100vh 100vh 100vh 95vh minmax(30px, 5vh);
-      grid-template-rows: minmax(30px, 10vh) 100vh 100vh 100vh 95vh minmax(30px, 5vh);
+  -ms-grid-rows: minmax(30px, 10vh) auto auto auto auto minmax(30px, 5vh);
+      grid-template-rows: minmax(30px, 10vh) auto auto auto auto minmax(30px, 5vh);
 }
 
 .projects-page-grid-container {
@@ -456,18 +457,7 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr;
-  /*     background-color: rgba(255, 0, 0, 0.2); */
-}
-
-.projects {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  /* background-color: rgba(0, 255, 72, 0.2); */
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -478,6 +468,26 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.projects {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .projects .projects-heading {
@@ -610,11 +620,18 @@ body {
   -ms-grid-row: 4;
   -ms-grid-row-span: 1;
   grid-row: 4/5;
-  /* background-color: rgba(0, 42, 255, 0.2); */
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: space-evenly;
-      align-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .skills .skills-heading {
@@ -651,11 +668,20 @@ body {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5/6;
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  /* background-color: rgba(255, 0, 238, 0.2); */
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
 }
 
 .contact .contact-heading {
@@ -672,6 +698,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact .input-name {
@@ -682,6 +710,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact .input-contact-info {
@@ -692,10 +722,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact .back-to-home {
-  margin-bottom: 2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .footerl {
@@ -867,7 +901,7 @@ body {
     font-size: .8rem;
   }
   :root .project-title {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 500;
   }
   :root a {
@@ -1061,10 +1095,10 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .projects .not-satisfied h5 {
     display: none;
@@ -1094,6 +1128,9 @@ body {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: .25rem;
+  }
+  .skills .skills-columns .skill-column li {
+    font-size: .75rem;
   }
   .contact {
     -ms-grid-row: 5;
@@ -1781,6 +1818,9 @@ body {
   .projects .card-flex-container {
     width: 20vw;
   }
+  .projects .card-flex-container .project-title {
+    font-size: 1.5rem;
+  }
   .projects .card-flex-container .genre {
     display: none;
   }
@@ -1811,6 +1851,9 @@ body {
   .home {
     height: 100vh;
   }
+  .projects .cards-flex-container .card-flex-container .genre {
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 1251px) {
@@ -1819,6 +1862,157 @@ body {
     display: grid;
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
+  }
+  .projects {
+    height: 100vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .skills {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-height: 620px) and (orientation: landscape) {
+  :root h2 {
+    font-size: 5rem;
+  }
+  :root .contact-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  :root .contact-btns .btn {
+    font-size: 1.5rem;
+  }
+  :root .contact-btns .btn i {
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+  .scroll-icon {
+    display: none;
+  }
+  .home .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects {
+    height: 100vh;
+  }
+  .projects .genre {
+    display: none;
+  }
+  .projects .content {
+    display: none;
+  }
+  .projects .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .skills {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 70vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .skills .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .skills .skills-columns {
+    gap: 2rem;
+  }
+  .contact .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-heading {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .contact-items {
+    display: none;
+  }
+  .or-use-form {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 725px) and (orientation: landscape) {
+  html {
+    overflow-x: hidden;
+  }
+  :root h2 {
+    font-size: 5rem;
+  }
+  :root .contact-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  :root .contact-btns .btn {
+    font-size: 1.5rem;
+  }
+  :root .contact-btns .btn i {
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+  .projects {
+    height: 100vh;
+  }
+  .projects .genre {
+    display: none;
+  }
+  .projects .content {
+    display: none;
+  }
+  .skills {
+    height: 100vh;
+  }
+  .contact-heading {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .contact-items {
+    display: none;
+  }
+  .or-use-form {
+    display: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */

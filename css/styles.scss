@@ -15,8 +15,9 @@ body{
     transition: all 200ms ease-in-out;
     /* background-color: var(--bg-color-dark-mode); */
     background-color: rgb(26, 26, 26);
-}
 
+    overflow-wrap: normal;
+}
 
 :root{
     --ff: 'Poppins', sans-serif;
@@ -46,11 +47,6 @@ body{
     /* Button colors*/
 
     --btn-one: #6c93aa;
-
-
-
-
-
 
     --btn-one-dark-mode: #7daac4;
     --btn-one-faded-dark-mode: #7daac479;
@@ -236,7 +232,7 @@ body{
     align-content: center;
     
     grid-template-columns: minmax(12px, auto) minmax(900px, 1440px) minmax(12px, auto);
-    grid-template-rows: minmax(30px, 10vh) 100vh 100vh 100vh min(95vh) minmax(30px, 5vh);
+    grid-template-rows: minmax(30px, 10vh) auto auto auto auto minmax(30px, 5vh);
 }
 
 .projects-page-grid-container{
@@ -377,18 +373,21 @@ body{
 .home{
     grid-row: 2/3;
 
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1.5fr;
+    height: 80vh;
 
-/*     background-color: rgba(255, 0, 0, 0.2); */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     
 }
 .projects{
     grid-row: 3/4;
-    /* background-color: rgba(0, 255, 72, 0.2); */
+   
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .projects-heading{
         padding-bottom: 1rem;
@@ -487,10 +486,12 @@ body{
 
 .skills{
     grid-row: 4/5;
-    /* background-color: rgba(0, 42, 255, 0.2); */
-    display: grid;
-    align-content: space-evenly;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
     .skills-heading{
         line-height: 1.5ch;
         padding-bottom: 3rem;
@@ -518,9 +519,13 @@ body{
 }
 .contact{
     grid-row: 5/6;
-    display: grid;
-    align-content: space-between;
-    /* background-color: rgba(255, 0, 238, 0.2); */
+    height: 100vh;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
 
     .contact-heading{
         display: grid;
@@ -530,18 +535,25 @@ body{
     .contact-form{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
     .input-name{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
     .input-contact-info{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
+
+
     .back-to-home{
-        margin-bottom: 2rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
     
 }
@@ -690,7 +702,7 @@ body{
             font-size: .8rem;
         }
         .project-title{
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 500;
         }
         a{
@@ -845,7 +857,7 @@ body{
                 }
                 .buttons-flex-container{
                     align-items: center;
-                    flex-direction: column;
+                    flex-direction: row;
                 }
             }
         }
@@ -869,6 +881,10 @@ body{
             display: grid;
             grid-template-columns: 1fr;
             gap: .25rem;
+
+            .skill-column li{
+                font-size: .75rem;
+            }
         }
 
     }
@@ -1495,6 +1511,9 @@ body{
 
         .card-flex-container{
             width: 20vw;
+            .project-title{
+                font-size: 1.5rem;
+            }
     
             .genre{
                 display: none;
@@ -1531,12 +1550,19 @@ body{
         .home{
             height: 100vh;
         }
-    }
+        .projects{
+            .cards-flex-container{
+                .card-flex-container{
+                    .genre{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    
+}
 
    
-    
-
-
 @media screen and (min-width: 1251px){
     .projects-page-grid-container{
         .projects-page{
@@ -1546,8 +1572,134 @@ body{
             }
         }
     }
-
+    .projects{
+        height: 100vh;
+        justify-content: center;
     }
+    .skills{
+        height: 100vh;
+    }
+
+}
+@media screen and (max-height: 620px) and (orientation: landscape){
+    :root{
+
+        h2{
+            font-size: 5rem;
+        }
+        .contact-btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 1.5rem;
+
+            .btn{
+                font-size: 1.5rem;
+                i{
+                    font-size: 1.5rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .scroll-icon{
+        display: none;
+    }
+    .home{
+        .buttons-flex-container{
+            flex-direction: column;
+        }
+    }
+    .projects{
+        height: 100vh;
+        .genre{
+            display: none;
+        }
+        .content{
+            display: none;
+        }
+        .buttons-flex-container{
+            flex-direction: column;
+        }
+    }
+    .skills{
+        height: 100vh;
+        flex-direction: column;
+        max-width: 70vw;
+        align-items: center;
+        justify-content: center;
+        .buttons-flex-container{
+            flex-direction: column;
+        }
+        .skills-columns{
+            gap: 2rem;
+        }
+    }
+    .contact{
+        .buttons-flex-container{
+            flex-direction: column;
+        }
+    }
+    .contact-heading{
+        width: min-content;
+    }
+    .contact-items{
+        display: none;
+    }
+    .or-use-form{
+        display: none;
+    }
+}
+    
+
+
+@media screen and (max-height: 725px) and (orientation: landscape){
+    html{
+        overflow-x: hidden;
+    }
+    :root{
+
+        h2{
+            font-size: 5rem;
+        }
+        .contact-btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 1.5rem;
+
+            .btn{
+                font-size: 1.5rem;
+                i{
+                    font-size: 1.5rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .projects{
+        height: 100vh;
+        .genre{
+            display: none;
+        }
+        .content{
+            display: none;
+        }
+    }
+    .skills{
+        height: 100vh;
+    }
+    .contact-heading{
+        width: min-content;
+    }
+    .contact-items{
+        display: none;
+    }
+    .or-use-form{
+        display: none;
+    }
+}
     
 
 
