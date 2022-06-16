@@ -782,6 +782,204 @@ body {
           flex-direction: row;
 }
 
+@media screen and (min-height: 672) and (orientation: landscape) {
+  :root h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-height: 620px) and (max-width: 1025px) {
+  :root h1 {
+    font-size: 3rem;
+  }
+  :root h2 {
+    font-size: 2rem;
+  }
+  :root h3 {
+    font-size: 2rem;
+  }
+  :root .contact-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1 rem;
+    padding-bottom: 2.5rem;
+  }
+  :root .contact-btns .btn {
+    font-size: 1rem;
+  }
+  :root .contact-btns .btn i {
+    font-size: 1rem;
+    opacity: 1;
+  }
+  .nav {
+    grid-area: nav;
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background-color: var(--btn-one-light-mode);
+  }
+  .nav .nav-social-links-flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+  }
+  .nav .nav-social-links-flex-container a {
+    font-size: 2rem;
+  }
+  .social-links-flex-container {
+    display: none;
+  }
+  .scroll-icon {
+    display: none;
+  }
+  .home .buttons-flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .projects {
+    height: 90vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .projects .cards-flex-container {
+    gap: 1rem;
+  }
+  .projects .genre {
+    display: none;
+  }
+  .projects .content {
+    display: none;
+  }
+  .projects .buttons-flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .skills {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 70vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .skills .buttons-flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .skills .skills-columns {
+    gap: 2rem;
+  }
+  .contact {
+    height: 90vh;
+  }
+  .contact .contact-heading {
+    padding: 0;
+  }
+  .contact .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .back-to-home {
+    display: none;
+  }
+  .contact-heading {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .contact-items {
+    display: none;
+  }
+  .or-use-form {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 725px) and (orientation: landscape) {
+  html {
+    overflow-x: hidden;
+  }
+  :root h2 {
+    font-size: 5rem;
+  }
+  :root .contact-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  :root .contact-btns .btn {
+    font-size: 1.5rem;
+  }
+  :root .contact-btns .btn i {
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+  .projects {
+    height: 100vh;
+  }
+  .projects .genre {
+    display: none;
+  }
+  .projects .content {
+    display: none;
+  }
+  .skills {
+    height: 100vh;
+  }
+  .contact-heading {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .contact-items {
+    display: none;
+  }
+  .or-use-form {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .projects-page-grid-container {
         grid-template-areas: "nav" "projects" "footer";
@@ -996,6 +1194,7 @@ body {
     width: 100vw;
     height: auto;
     position: fixed;
+    bottom: 0;
     z-index: 999;
     background-color: var(--btn-one-light-mode);
   }
@@ -1031,15 +1230,17 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    /* justify-content: space-around; */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .projects {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: projects;
     width: 100vw;
-    height: 90vh;
+    height: 120vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1050,6 +1251,9 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     padding-top: 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .projects .cards-flex-container {
     gap: 0rem;
@@ -1108,7 +1312,7 @@ body {
     -ms-grid-column: 1;
     grid-area: skills;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     padding-top: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1121,6 +1325,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     gap: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .skills .skills-columns {
     display: -ms-grid;
@@ -1138,6 +1345,10 @@ body {
     grid-area: contact;
     width: 100vw;
     padding-top: 3rem;
+    margin-bottom: 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .contact .input-name, .contact .input-contact-info {
     display: -webkit-box;
@@ -1150,6 +1361,9 @@ body {
   }
   .contact .input-info, .contact .input-message {
     width: 90vw;
+  }
+  .contact .back-to-home {
+    display: none;
   }
   .footer {
     width: 100vw;
@@ -1284,7 +1498,7 @@ body {
     font-size: .8rem;
   }
   :root .project-title {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 500;
   }
   :root a {
@@ -1362,6 +1576,7 @@ body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+    width: 100vw;
   }
   .marginl {
     display: none;
@@ -1376,6 +1591,7 @@ body {
     width: 100vw;
     height: auto;
     position: fixed;
+    bottom: 0;
     z-index: 999;
     background-color: var(--btn-one-light-mode);
   }
@@ -1413,13 +1629,16 @@ body {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .projects {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: projects;
     width: 100vw;
-    height: 90vh;
+    height: 120vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1430,6 +1649,9 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     padding-top: 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .projects .cards-flex-container {
     gap: 0rem;
@@ -1485,8 +1707,11 @@ body {
     -ms-grid-column: 1;
     grid-area: skills;
     width: 100vw;
-    height: 100vh;
+    height: 130vh;
     padding-top: 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .skills .skills-columns {
     display: -ms-grid;
@@ -1501,6 +1726,13 @@ body {
     grid-area: contact;
     width: 100vw;
     padding-top: 3rem;
+    margin-bottom: 3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact .back-to-home {
+    display: none;
   }
   .footer {
     width: 100vw;
@@ -1538,12 +1770,12 @@ body {
             flex-direction: row;
   }
   :root h1 {
-    font-size: 7rem;
+    font-size: 5rem;
     line-height: 1;
     font-weight: 400;
   }
   :root h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400;
   }
   :root h3 {
@@ -1595,17 +1827,17 @@ body {
             align-items: center;
   }
   :root .contact-info {
-    font-size: 1.75rem;
+    font-size: 1rem;
   }
   :root .input-info {
-    font-size: 1.25rem;
+    font-size: 1rem;
     width: 39vw;
     padding: .5rem;
     margin-right: 1vw;
     margin-bottom: 1vh;
   }
   :root .input-message {
-    font-size: 1.25rem;
+    font-size: 1rem;
     width: 80vw;
     border-radius: .5rem;
     padding: .5rem;
@@ -1640,6 +1872,9 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+  }
+  .projects {
+    height: 120vh;
   }
   .projects .cards-flex-container {
     gap: 0rem;
@@ -1693,12 +1928,18 @@ body {
   .projects .not-satisfied h5 {
     display: none;
   }
+  .skills {
+    height: 120vh;
+  }
   .skills .skills-columns {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+  .contact-heading {
+    width: auto;
   }
 }
 
@@ -1815,11 +2056,27 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .projects .cards-flex-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .projects .card-flex-container {
     width: 20vw;
   }
+  .projects .card-flex-container .buttons-flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .projects .card-flex-container .project-title {
     font-size: 1.5rem;
+  }
+  .projects .card-flex-container .card-buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .projects .card-flex-container .genre {
     display: none;
@@ -1829,6 +2086,123 @@ body {
   }
   .projects .card-flex-container .btn {
     padding: .35rem;
+  }
+  .projects .not-satisfied {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 940px) and (max-height: 371px) {
+  :root h1 {
+    font-size: 3rem;
+  }
+  :root h2 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  :root h3 {
+    font-size: 1.5rem;
+  }
+  :root h4 {
+    font-size: 1.25rem;
+  }
+  :root h5 {
+    font-size: 1rem;
+  }
+  :root .input-info {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  :root .input-message {
+    width: 20rem;
+    font-size: 1rem;
+  }
+  :root .contact-form {
+    display: none;
+  }
+  .projects {
+    height: 120vh;
+  }
+  .skills {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin-bottom: 5rem;
+  }
+  .contact {
+    height: 80vh;
+    margin-bottom: 3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact .contact-heading {
+    width: auto;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 940px) and (max-height: 490px) {
+  :root h1 {
+    font-size: 3rem;
+  }
+  :root h2 {
+    font-size: 2rem;
+  }
+  :root h3 {
+    font-size: 1.5rem;
+  }
+  :root h4 {
+    font-size: 1.25rem;
+  }
+  :root h5 {
+    font-size: 1rem;
+  }
+  :root .input-info {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  :root .input-message {
+    width: 20rem;
+    font-size: 1rem;
+  }
+  .projects {
+    height: 120vh;
+  }
+  .skills {
+    height: 120vh;
+  }
+}
+
+@media screen and (max-width: 940px) and (max-height: 590px) {
+  :root h1 {
+    font-size: 4rem;
+  }
+  :root h2 {
+    font-size: 3rem;
+  }
+  :root h3 {
+    font-size: 1.5rem;
+  }
+  :root h4 {
+    font-size: 1.25rem;
+  }
+  :root h5 {
+    font-size: 1rem;
+  }
+  :root .input-info {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  :root .input-message {
+    width: 20rem;
+    font-size: 1rem;
   }
 }
 
@@ -1856,6 +2230,62 @@ body {
   }
 }
 
+@media screen and (min-width: 1251px) and (max-height: 530px) {
+  :root h1 {
+    font-size: 7rem;
+  }
+  :root h2 {
+    font-size: 3rem;
+  }
+  :root h3 {
+    font-size: 2rem;
+  }
+  :root h4 {
+    font-size: 1.5rem;
+  }
+  :root h5 {
+    font-size: 1rem;
+  }
+  :root a {
+    font-size: 1rem;
+  }
+  :root .btn {
+    font-size: 1rem;
+  }
+  :root .date {
+    font-size: 1rem;
+  }
+  :root .project-title {
+    font-size: 1rem;
+  }
+  :root .input-info {
+    width: 8.5rem;
+    font-size: 1rem;
+  }
+  :root .input-message {
+    width: 18rem;
+    font-size: 1rem;
+  }
+  .scroll-icon,
+  .back-to-home {
+    display: none;
+  }
+  .projects {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects .card-flex-container {
+    gap: 2rem;
+  }
+  .contact {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 @media screen and (min-width: 1251px) {
   .projects-page-grid-container .projects-page .project-page-items {
     display: -ms-grid;
@@ -1871,148 +2301,6 @@ body {
   }
   .skills {
     height: 100vh;
-  }
-}
-
-@media screen and (max-height: 620px) and (orientation: landscape) {
-  :root h2 {
-    font-size: 5rem;
-  }
-  :root .contact-btns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    gap: 1.5rem;
-  }
-  :root .contact-btns .btn {
-    font-size: 1.5rem;
-  }
-  :root .contact-btns .btn i {
-    font-size: 1.5rem;
-    opacity: 1;
-  }
-  .scroll-icon {
-    display: none;
-  }
-  .home .buttons-flex-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .projects {
-    height: 100vh;
-  }
-  .projects .genre {
-    display: none;
-  }
-  .projects .content {
-    display: none;
-  }
-  .projects .buttons-flex-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .skills {
-    height: 100vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    max-width: 70vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .skills .buttons-flex-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .skills .skills-columns {
-    gap: 2rem;
-  }
-  .contact .buttons-flex-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .contact-heading {
-    width: -webkit-min-content;
-    width: -moz-min-content;
-    width: min-content;
-  }
-  .contact-items {
-    display: none;
-  }
-  .or-use-form {
-    display: none;
-  }
-}
-
-@media screen and (max-height: 725px) and (orientation: landscape) {
-  html {
-    overflow-x: hidden;
-  }
-  :root h2 {
-    font-size: 5rem;
-  }
-  :root .contact-btns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    gap: 1.5rem;
-  }
-  :root .contact-btns .btn {
-    font-size: 1.5rem;
-  }
-  :root .contact-btns .btn i {
-    font-size: 1.5rem;
-    opacity: 1;
-  }
-  .projects {
-    height: 100vh;
-  }
-  .projects .genre {
-    display: none;
-  }
-  .projects .content {
-    display: none;
-  }
-  .skills {
-    height: 100vh;
-  }
-  .contact-heading {
-    width: -webkit-min-content;
-    width: -moz-min-content;
-    width: min-content;
-  }
-  .contact-items {
-    display: none;
-  }
-  .or-use-form {
-    display: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */
